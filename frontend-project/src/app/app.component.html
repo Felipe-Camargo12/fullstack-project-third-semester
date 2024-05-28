@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pegasus</title>
+    <style>
+        /* Estilos globais */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            flex: 1;
+            display: flex;
+        }
+        .content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            flex-grow: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        footer {
+            background-color: #1c014f;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+        }
+
+        /* Estilos do cabeçalho */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 5px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: relative;
+            width: 50px; /* Largura do ícone de mais opções */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+            padding: 5px;
+            display: none; /* Inicialmente oculto */
+        }
+        nav a:hover {
+            background-color: #666;
+        }
+        .show-links a {
+            display: block; /* Mostra os links ao clicar no ícone */
+        }
+
+        /* Estilos dos produtos */
+        .product {
+            width: calc(33.333% - 20px);
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .product h2 {
+            margin-top: 0;
+        }
+        .product p {
+            margin-bottom: 10px;
+        }
+        .product button {
+            background-color: #1c014f;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .product button:hover {
+            background-color: #333;
+        }
+
+        /* Responsividade */
+        @media only screen and (max-width: 768px) {
+            .product {
+                width: calc(50% - 20px);
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            .product {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+      <nav>
+        <div class="icon">+</div>
+        <div class="links">
+            <a href="#">Catálogo</a>
+            <a href="#">Sobre nós</a>
+            <a href="#">Contato</a>
+        </div>
+    </nav>
+    
+    <h1>Pegasus</h1>
+        
+    </header>
+    
+    <div class="container">
+        <div class="content">
+            <h2>Produtos em Destaque</h2>
+            <div class="product">
+                <img src="imagem-produto.jpg" alt="Produto 1">
+                <h2>Produto 1</h2>
+                <p>Descrição do produto 1...</p>
+                <p>R$ 100,00</p>
+                <button>Adicionar ao carrinho</button>
+            </div>
+            <div class="product">
+              <img src="imagem-produto.jpg" alt="Produto 2">
+              <h2>Produto 2</h2>
+              <p>Descrição do produto 2...</p>
+              <p>R$ 150,00</p>
+              <button>Adicionar ao carrinho</button>
+          </div>
+          <!-- Adicione mais produtos aqui -->
+      </div>
+  </div>
+  <footer>
+      <p>&copy; 2024 Pegasus. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // Seleciona o ícone do menu
+    const menuIcon = document.querySelector('.icon');
+    // Seleciona os links do menu
+    const menuLinks = document.querySelector('.links');
+
+    // Adiciona um evento de clique ao ícone do menu
+    menuIcon.addEventListener('click', function() {
+        // Alterna a classe para mostrar ou ocultar os links
+        menuLinks.classList.toggle('show-links');
+    });
+  </script>
+</body>
+</html>
